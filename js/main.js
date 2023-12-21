@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Establecer el tiempo en segundos
-    var tiempoRestante = 3600; // Cambia este valor al tiempo deseado en segundos
+    var tiempoRestante = 53; // Cambia este valor al tiempo deseado en segundos
     
     var contadorElemento = document.getElementById('contador');
     var botonDescarga = document.getElementById('boton-descarga');

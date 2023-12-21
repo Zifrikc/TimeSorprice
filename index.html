@@ -10,11 +10,18 @@
 </head>
 <body>
     <div class="contenedor-principal fs-2">
-    <div id="temporizador-container">
-        <p id="temporizador">Tiempo restante para el llamado no cerrar la pagina: <span id="contador"></span></p>
-        <a id="boton-descarga" href="luluciferinvitacion.mp3" download="invitacion.mp3" style="display: none;">Descargar invitacion </a>
+        <div class="video-container">
+            <video id="video-background" autoplay loop>
+                <source src="/BGDIableFInal.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </div>
+        <div class="container" id="temporizador-container">
+            <p id="temporizador" class="fs-2">Tiempo restante para el llamado, no cerrar la página: <span id="contador"></span></p>
+            <a id="boton-descarga" href="luluciferinvitacion.mp3" download="invitacion.mp3" style="display: none;">Descargar invitación</a>
+        </div>
     </div>
-</div>
+
     <script src="/js/main.js"></script>
 </body>
 </html>

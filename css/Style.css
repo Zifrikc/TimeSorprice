@@ -2,26 +2,46 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1703022979/11_x5ae2s.gif') center/cover no-repeat fixed;
+    overflow: hidden; /* Evita que el video sobresalga del contenedor principal */
 }
 
-#contenedor-principal {
+.contenedor-principal {
+    position: relative; /* Asegura que los elementos hijos posicionados se ubiquen con respecto a este contenedor */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Oculta cualquier parte del video que esté fuera del contenedor */
+}
+
+#video-background {
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción del video */
+}
+
 #temporizador-container {
+    z-index: 1; /* Asegura que el temporizador aparezca encima del video */
     background-color: rgba(255, 255, 255, 0.7);
     border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 19px;
+    padding: 15px;
     text-align: center;
+    max-width: 350px;
+    max-height: 350px;
+    animation: fadeInUp 1s ease-out;
 }
 
 #temporizador {
-    font-size: 24px; /* Tamaño de la letra del tiempo */
+    font-size: 40px; /* Tamaño de la letra del tiempo */
+    color: brown;
 }
 
 #boton-descarga {
@@ -32,4 +52,27 @@ body {
     background-color: #fff;
     border: 1px solid #333;
     border-radius: 5px;
+    animation: fadeIn 2s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
