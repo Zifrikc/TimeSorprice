@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Evita que el video sobresalga del contenedor principal */
+    overflow: hidden;
 }
 
 .contenedor-principal {
-    position: relative; /* Asegura que los elementos hijos posicionados se ubiquen con respecto a este contenedor */
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,28 +19,29 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Oculta cualquier parte del video que esté fuera del contenedor */
+    overflow: hidden;
 }
 
 #video-background {
     width: 100%;
-    height: auto; /* Ajusta la altura automáticamente para mantener la proporción del video */
+    height: auto;
+    object-fit: cover
 }
 
 #temporizador-container {
-    z-index: 1; /* Asegura que el temporizador aparezca encima del video */
+    z-index: 1;
     background-color: rgba(255, 255, 255, 0.7);
     border: 2px solid #333;
     border-radius: 19px;
     padding: 15px;
     text-align: center;
-    max-width: 350px;
-    max-height: 350px;
+    max-width: 90%; /* Cambiado de 350px a un porcentaje */
+    max-height: 90vh; /* Añadido límite de altura para evitar desbordamiento en dispositivos pequeños */
     animation: fadeInUp 1s ease-out;
 }
 
 #temporizador {
-    font-size: 40px; /* Tamaño de la letra del tiempo */
+    font-size: 40px;
     color: brown;
 }
 
@@ -74,5 +75,17 @@ body {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media screen and (max-width: 767px) {
+    #temporizador-container {
+        max-width: 90%; /* Cambiado de 350px a un porcentaje */
+        max-height: none; /* Restablecido a "none" para que pueda crecer según el contenido */
+    }
+
+    #temporizador {
+        font-size: 30px;
     }
 }
